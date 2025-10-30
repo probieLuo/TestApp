@@ -32,16 +32,17 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
                 <Button
-                    Command="{Binding BrowserBackCommand}"
-                    ToolTip="">
+    Command="{Binding BrowserBackCommand}" Margin="5">
                     <TextBlock
-                        Text="&#xE72B;" />
+        Style="{StaticResource SmallIconStyle}"
+        Text="&#xE72B;" />
                 </Button>
                 <Button
                     Command="{Binding BrowserForwardCommand}"
-                    ToolTip="">
+                    ToolTip="" Margin="5">
                     <TextBlock
-                        Text="&#xE72A;" />
+                        Style="{StaticResource SmallIconStyle}"
+Text="&#xE72A;" />
                 </Button>
             </StackPanel >
 
@@ -58,17 +59,20 @@
             <StackPanel Grid.Column="2" Orientation="Horizontal">
                 <Button
                     Command="{Binding RefreshCommand}"
-                    ToolTip=""
+                    ToolTip="" Margin="5"
                     AutomationProperties.Name="">
                     <TextBlock
-                        Text="&#xE72C;" />
+                        Style="{StaticResource SmallIconStyle}"
+Text="&#xE72C;" />
                 </Button>
                 <Button
                     Command="{Binding OpenInBrowserCommand}"
                     ToolTip=""
+                    Margin="5"
                     AutomationProperties.Name="">
                     <TextBlock
-                        Text="&#xE774;" />
+                        Style="{StaticResource SmallIconStyle}"
+Text="&#xE774;" />
                 </Button>
             </StackPanel>
         </Grid>

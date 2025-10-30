@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.11" />
     <PackageReference Include="Markdig" Version="0.42.0" />
     <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3537.50" />
     <PackageReference Include="WPF-UI" Version="4.0.2" />

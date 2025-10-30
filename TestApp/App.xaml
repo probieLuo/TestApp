@@ -11,6 +11,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ui:ThemesDictionary Theme="Light" />
                 <ui:ControlsDictionary />
+                <ResourceDictionary Source="/Styles/TextBlock.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
