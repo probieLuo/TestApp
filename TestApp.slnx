@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Services/">
+    <Project Path="ToMdService/ToMdService.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Project Path="TestApp/TestApp.csproj" />
+</Solution>
