@@ -1,0 +1,35 @@
+﻿<Page x:Class="TestApp.Views.Pages.ToMdPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestApp.Views.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      d:DataContext="{d:DesignInstance local:ToMdPage,
+                                  IsDesignTimeCreatable=False}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ToMdPage">
+
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Page.Resources>
+
+    <DockPanel Margin="0 40 0 0" HorizontalAlignment="Center" LastChildFill="True">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <ui:Button Margin="5" Content="选择txt文件" Command="{Binding ViewModel.SelectTxtPathCommand}"/>
+            <ui:TextBox Margin="5" Width="500" IsReadOnly="True" VerticalAlignment="Center" Text="{Binding ViewModel.TxtPath, Mode=OneWay}" />
+        </StackPanel>
+        <ui:Button DockPanel.Dock="Top" Margin="5" Content="开始转换" IsEnabled="{Binding !ViewModel.IsBusy}" Command="{Binding ViewModel.ConvertToMdCommand}"/>
+
+        <ProgressBar DockPanel.Dock="Top" Margin="50 20" Height="20" 
+            Value="{Binding ViewModel.ProgressValue}" 
+            Visibility="{Binding ViewModel.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+        <ui:TextBlock DockPanel.Dock="Top" Text="{Binding ViewModel.StatusMessage}" 
+           HorizontalAlignment="Center" Margin="0 10 0 0"
+           FontSize="14" Foreground="Gray" />
+
+        <WebBrowser  Margin="0 20 0 0"  Visibility="Collapsed" x:Name="PreviewBrowser"/>
+    </DockPanel>
+</Page>

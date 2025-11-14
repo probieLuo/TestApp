@@ -1,9 +1,12 @@
 <Solution>
-  <Folder Name="/Services/">
-    <Project Path="ToMdService/ToMdService.csproj" />
+  <Folder Name="/NotificationThrottle/">
+    <Project Path="NotificationThrottle/NotificationThrottle/NotificationThrottle.csproj" Id="5a269e57-6f3e-47d0-b05c-f67d0b67ec21" />
   </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
   </Folder>
-  <Project Path="TestApp/TestApp.csproj" />
+  <Folder Name="/TextGenerateMarkdown/">
+    <Project Path="TextGenerateMarkdown/MarkdownService/MarkdownService.csproj" />
+    <Project Path="TextGenerateMarkdown/TextGenerateMarkdown/TextGenerateMarkdown.csproj" />
+  </Folder>
 </Solution>
