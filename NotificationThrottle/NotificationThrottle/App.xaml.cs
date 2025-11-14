@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Notification.Wpf;
 using NotificationThrottle.Services;
 using NotificationThrottle.ViewModels.Pages;
 using NotificationThrottle.ViewModels.Windows;
@@ -42,8 +43,11 @@ namespace NotificationThrottle
 				// Service containing navigation, same as INavigationWindow... but without window
 				services.AddSingleton<INavigationService, NavigationService>();
 
-				// Main window with navigation
-				services.AddSingleton<INavigationWindow, MainWindow>();
+				services.AddSingleton<NotificationManager>();
+                services.AddSingleton<NotificationThrottle.Services.NotificationThrottle>();
+
+                // Main window with navigation
+                services.AddSingleton<INavigationWindow, MainWindow>();
 				services.AddSingleton<MainWindowViewModel>();
 
 				services.AddSingleton<DashboardPage>();
@@ -52,7 +56,7 @@ namespace NotificationThrottle
 				services.AddSingleton<DataViewModel>();
 				services.AddSingleton<SettingsPage>();
 				services.AddSingleton<SettingsViewModel>();
-			}).Build();
+            }).Build();
 
 		/// <summary>
 		/// Gets services.
